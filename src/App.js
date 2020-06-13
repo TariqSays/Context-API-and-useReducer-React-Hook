@@ -1,9 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Parent from './Parent';
+import ValueContext from './ValueContext';
+
 
 function App() {
+  let value = 81;
   return (
+    <ValueContext.Provider value={value}>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -16,10 +21,12 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          <Parent></Parent>
           Learn React
         </a>
       </header>
     </div>
+    </ValueContext.Provider>
   );
 }
 
