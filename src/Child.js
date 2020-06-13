@@ -5,8 +5,11 @@ function Child(props){
     let value = useContext(ValueContext);
     return(
         <div>
-            Child Component {value}
-
+            Child Component {value[0]}
+            <br></br>
+            <button onClick={ ()=>{
+                value[1](++value[0])
+            }}>Update</button>
         </div>
     );
 }
